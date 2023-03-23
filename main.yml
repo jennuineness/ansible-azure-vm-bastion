@@ -1,5 +1,5 @@
 ---
-- name: Apply terraform
+- name: Apply terraform from Ansible module
   terraform:
     force_init: true
     project_path: "{{ role_path }}/files"
