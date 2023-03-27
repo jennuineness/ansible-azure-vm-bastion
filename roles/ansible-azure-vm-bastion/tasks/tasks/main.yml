@@ -1,4 +1,4 @@
 ---
 - name: Print message
   debug:
-    msg: "ansible-azure-vm-bastion"
+    msg: "{{ message }}"
