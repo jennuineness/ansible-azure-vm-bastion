@@ -1,4 +1,0 @@
----
-- name: Print message
-  debug:
-    msg: "{{ message }}"

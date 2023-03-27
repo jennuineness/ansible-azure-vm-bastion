@@ -1,0 +1,8 @@
+---
+- name: Include vars of shared_outputs.json into the shared_vars variable
+  ansible.builtin.include_vars:
+    file: "{{ shared_outputs_vars }}"
+    name: shared_vars
+- name: Print message
+  debug:
+    msg: "{{ shared_vars.message }}"

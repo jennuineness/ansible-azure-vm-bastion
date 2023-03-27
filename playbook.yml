@@ -1,0 +1,15 @@
+---
+- name: Playbook to deploy ansible-azure-vm-bastion
+  vars:
+    terraform_template_vars: "{{ playbook_dir }}/group_vars/terraform.template.tfvars"
+    credentials_template_vars: "{{ playbook_dir }}/group_vars/credentials.auto.template.tfvars"
+    shared_outputs_vars: "{{ playbook_dir }}/group_vars/shared_outputs.json"
+  hosts: localhost
+  pre_tasks:
+    - name: Create shared outputs file if doesn't exist
+      file:
+        path: "{{ shared_outputs_vars }}"
+        state: touch
+      check_mode: no
+  roles:
+    - role: ansible-azure-vm-bastion
